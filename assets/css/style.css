@@ -586,6 +586,53 @@ a:hover {
   gap: var(--spacing-md);
 }
 
+/* CV Section */
+.cv-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cv-description {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-2xl);
+  color: var(--text-secondary);
+}
+
+.cv-download {
+  display: flex;
+  justify-content: center;
+}
+
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: all var(--transition-normal);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
+}
+
+.cv-download-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+.cv-download-btn svg {
+  transition: transform var(--transition-normal);
+}
+
+.cv-download-btn:hover svg {
+  transform: translateY(2px);
+}
+
 /* Contact Section */
 .contact-content {
   text-align: center;
@@ -718,6 +765,11 @@ a:hover {
 
   .contact-links {
     flex-direction: column;
+  }
+
+  .cv-download-btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1rem;
   }
 
   .skills-grid {
