@@ -436,52 +436,20 @@ a:hover {
   gap: var(--spacing-md);
 }
 
-.experience-title {
-  margin-bottom: 0;
-  color: var(--text-primary);
+.experience-title-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
 }
 
+.experience-title-link:hover {
+  color: var(--primary-color);
+}
 .experience-meta {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: var(--spacing-xs);
-}
-
-.experience-company {
-  font-weight: 600;
-  color: var(--primary-color);
-}
-
-.experience-period {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-}
-
-.experience-description {
-  margin-bottom: var(--spacing-lg);
-  font-size: 1.125rem;
-  line-height: 1.6;
-}
-
-.experience-highlights ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.experience-highlights li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: var(--spacing-sm);
-  color: var(--text-secondary);
-}
-
-.experience-highlights li::before {
-  content: '▶';
-  position: absolute;
-  left: 0;
-  color: var(--primary-color);
-  font-size: 0.75rem;
 }
 
 /* Education Section */
