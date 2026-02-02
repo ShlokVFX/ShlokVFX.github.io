@@ -3,12 +3,12 @@
 
 /* CSS Custom Properties - Space Theme (Dark Only) */
 :root {
-  /* Space Theme Colors */
-  --primary-color: #00d9ff;
-  --primary-glow: #00d9ff;
-  --accent-color: #ff006e;
-  --accent-glow: #ff006e;
-  --secondary-color: #7209b7;
+  /* Pure Black and White Theme */
+  --primary-color: #ffffff;
+  --primary-glow: transparent;
+  --accent-color: #ffffff;
+  --accent-glow: transparent;
+  --secondary-color: #ffffff;
   
   --text-primary: #f0f0f0;
   --text-secondary: #b0b0b0;
@@ -18,8 +18,8 @@
   --bg-tertiary: #1a1a1a;
   
   --border-color: #333333;
-  --shadow-color: rgba(0, 217, 255, 0.1);
-  --shadow-hover: rgba(0, 217, 255, 0.2);
+  --shadow-color: transparent;
+  --shadow-hover: transparent;
   
   --font-family: 'Neuton', 'Georgia', 'Times New Roman', serif;
   
@@ -221,7 +221,7 @@ a::after {
   height: 2px;
   background: var(--primary-color);
   transition: width var(--transition);
-  box-shadow: 0 0 10px var(--primary-glow);
+  box-shadow: none;
 }
 
 a:hover::after {
@@ -229,7 +229,7 @@ a:hover::after {
 }
 
 a:hover {
-  text-shadow: 0 0 10px var(--primary-glow);
+  text-shadow: none;
 }
 
 /* Container */

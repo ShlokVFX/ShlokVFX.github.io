@@ -288,11 +288,19 @@ class ParallaxScroll {
     
     if (scrollY < heroHeight) {
       const offset = scrollY * 0.5;
-      const opacity = 1 - (scrollY / heroHeight) * 0.3;
+      const opacity = Math.max(0, 1 - (scrollY / (heroHeight * 0.6)));
       
       if (this.heroContent) {
         this.heroContent.style.transform = `translateY(${offset}px)`;
-        this.heroContent.style.opacity = opacity;
+      }
+
+      // Fade out CTA buttons when scrolling down
+      const ctaButtons = document.querySelectorAll('.hero-cta');
+      if (ctaButtons.length > 0) {
+        ctaButtons.forEach(btn => {
+          btn.style.opacity = opacity;
+          btn.style.pointerEvents = opacity < 0.05 ? 'none' : 'auto';
+        });
       }
       
       // Add subtle rotation to stars based on scroll
