@@ -8,7 +8,7 @@ class ParticleNetwork {
     }
     this.ctx = this.canvas.getContext('2d');
     this.particles = [];
-    this.connectionDistance = 150;
+    this.connectionDistance = 180;
     this.particleCount = 0;
     this.mouse = { x: 0, y: 0 };
     
@@ -29,21 +29,26 @@ class ParticleNetwork {
 
   init() {
     this.particles = [];
-    this.particleCount = Math.floor((this.canvas.width * this.canvas.height) / 10000);
+    this.particleCount = Math.floor((this.canvas.width * this.canvas.height) / 8000);
     for (let i = 0; i < this.particleCount; i++) {
       this.particles.push({
         x: Math.random() * this.canvas.width,
         y: Math.random() * this.canvas.height,
-        radius: Math.random() * 0.8,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        opacity: Math.random() * 0.4 + 0.15,
+        radius: Math.random() * 1.2,
+        vx: (Math.random() - 0.5) * 0.12,
+        vy: (Math.random() - 0.5) * 0.12,
+        opacity: Math.random() * 0.6 + 0.3,
       });
     }
   }
 
   animate() {
-    this.ctx.fillStyle = '#000000';
+    // Create gradient background
+    const gradient = this.ctx.createLinearGradient(0, 0, this.canvas.width, this.canvas.height);
+    gradient.addColorStop(0, '#000000');
+    gradient.addColorStop(0.5, '#0a0a15');
+    gradient.addColorStop(1, '#000000');
+    this.ctx.fillStyle = gradient;
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
     // Update and draw particles
@@ -57,14 +62,14 @@ class ParticleNetwork {
       if (particle.y < 0) particle.y = this.canvas.height;
       if (particle.y > this.canvas.height) particle.y = 0;
 
-      // Draw particle (darker gray for Ether theme)
-      this.ctx.fillStyle = `rgba(70, 70, 70, ${particle.opacity})`;
+      // Draw brighter particles
+      this.ctx.fillStyle = `rgba(120, 120, 120, ${particle.opacity})`;
       this.ctx.beginPath();
       this.ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
       this.ctx.fill();
     });
 
-    // Draw connections (darker lines for Ether theme)
+    // Draw brighter connections between particles
     for (let i = 0; i < this.particles.length; i++) {
       for (let j = i + 1; j < this.particles.length; j++) {
         const p1 = this.particles[i];
@@ -74,9 +79,9 @@ class ParticleNetwork {
         const distance = Math.sqrt(dx * dx + dy * dy);
 
         if (distance < this.connectionDistance) {
-          const opacity = (1 - distance / this.connectionDistance) * 0.4;
-          this.ctx.strokeStyle = `rgba(100, 100, 100, ${opacity})`;
-          this.ctx.lineWidth = 1;
+          const opacity = (1 - distance / this.connectionDistance) * 0.65;
+          this.ctx.strokeStyle = `rgba(160, 160, 160, ${opacity})`;
+          this.ctx.lineWidth = 1.2;
           this.ctx.beginPath();
           this.ctx.moveTo(p1.x, p1.y);
           this.ctx.lineTo(p2.x, p2.y);
@@ -261,11 +266,7 @@ class GlowFollow {
       const distance = Math.sqrt(x * x + y * y);
       
       if (distance < 150) {
-        const intensity = (1 - distance / 150) * 0.5;
-        el.style.boxShadow = `
-          0 0 ${20 + intensity * 30}px rgba(0, 217, 255, ${intensity}),
-          inset 0 0 ${15 + intensity * 20}px rgba(0, 217, 255, ${intensity * 0.3})
-        `;
+        // Glow effect disabled for clean aesthetic
       } else {
         el.style.boxShadow = '';
       }

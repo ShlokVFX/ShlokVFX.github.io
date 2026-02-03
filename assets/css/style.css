@@ -142,10 +142,10 @@ body {
   font-family: var(--font-family);
   line-height: 1.6;
   color: var(--text-primary);
-  background-color: var(--bg-primary);
+  background: linear-gradient(135deg, #000000 0%, #0a0a15 50%, #000000 100%);
   position: relative;
   overflow-x: hidden;
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="8" fill="%23ffffff"/><ellipse cx="16" cy="16" rx="14" ry="4" fill="none" stroke="%23ffffff" stroke-width="1" opacity="0.6"/></svg>') 16 16, auto;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g fill="%23ffffff"><polygon points="16,2 26,14 22,14 22,22 10,22 10,14 6,14"/><polygon points="12,16 14,16 14,18 12,18"/><polygon points="18,16 20,16 20,18 18,18"/></g></svg>') 16 16, auto;
 }
 
 /* Starfield Background */
@@ -244,7 +244,7 @@ a:hover {
   position: fixed;
   top: 0;
   width: 100%;
-  background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(10, 14, 39, 0.9) 100%);
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
   border-bottom: 1px solid var(--border-color);
   z-index: 1000;
   backdrop-filter: blur(10px);
