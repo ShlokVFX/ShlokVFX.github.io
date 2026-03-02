@@ -103,26 +103,41 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="section section-alt">
-            <div class="container">
-                <h2 class="section-title">Featured Project</h2>
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <h3 class="project-title">WaveBoost</h3>
-                        <p class="project-description">
-                            Building hpc GPU kernels. WaveBoost focuses on efficient attention computation, low-latency decoding, and optimized memory management for deploying large language models at scale with minimal latency overhead.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">LLM Inference</span>
-                            <span class="tag">Attention Optimization</span>
-                            <span class="tag">GPU Kernels</span>
-                            <span class="tag">CUDA</span>
-                        </div>
-                        <a href="https://github.com/ShlokVFX/WaveBoost" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
-                    </article>
+<section id="projects" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <article class="project-card">
+                <h3 class="project-title">Mini-Attention</h3>
+                <p class="project-description">
+                    A personal research repo for high-performance GPU attention kernels. Implements Standard, Ring, and KV-Cached/Paged attention across PyTorch, Triton, and CUDA — with dedicated branches optimized for RTX 3060, NVIDIA Blackwell (B200), and AMD MI300. Benchmarks single- and multi-GPU performance, memory efficiency, and throughput.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">Flash Attention</span>
+                    <span class="tag">KV-Cache</span>
+                    <span class="tag">CUDA / Triton</span>
+                    <span class="tag">Multi-GPU</span>
+                    <span class="tag">AMD MI300</span>
                 </div>
-            </div>
-        </section>
+                <a href="https://github.com/ShlokVFX/Mini-Attention" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+            </article>
+
+            <article class="project-card">
+                <h3 class="project-title">WaveBoost</h3>
+                <p class="project-description">
+                    An inference optimization sandbox implementing individual CUDA kernels for LLM inference from scratch. Reimplements attention variants including MHA and GQA, with systematic benchmarking to study low-latency decoding and optimized memory management at scale.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">LLM Inference</span>
+                    <span class="tag">MHA / GQA</span>
+                    <span class="tag">GPU Kernels</span>
+                    <span class="tag">CUDA</span>
+                </div>
+                <a href="https://github.com/ShlokVFX/WaveBoost" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+            </article>
+        </div>
+    </div>
+</section>
         <!-- Contact Section -->
         <section id="contact" class="section section-alt">
             <div class="container">
